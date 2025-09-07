@@ -24,7 +24,7 @@ const Services = () => {
     },
     {
       id: 5,
-      url: "/HybridEnhancer.jpg",
+      url: "/window.jpeg",
       title: "Virtual & Hybrid Events",
     },
     {

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 const About = () => {
   const [currentTeamIndex, setCurrentTeamIndex] = useState(0);
-  
+
   const teamImages = [
     { src: "/team3.webp", alt: "Team Event 3" },
     { src: "/team4.webp", alt: "Team Event 4" },
     { src: "/team5.webp", alt: "Team Event 5" },
     { src: "/team6.webp", alt: "Team Event 6" },
-    { src: "/team7.jpg", alt: "Team Event 7" }
+    { src: "/team7.jpg", alt: "Team Event 7" },
+    { src: "/1000974106.jpg", alt: "party" }
   ];
 
   const nextTeamImage = () => {
@@ -27,10 +28,10 @@ const About = () => {
     <section className="about">
       <div className="about-hero">
         <div className="hero-content">
-         
+
           <h1 className="hero-title">About EventEngineer360</h1>
           <p className="hero-subtitle">
-            Crafting unforgettable experiences through strategic innovation, 
+            Crafting unforgettable experiences through strategic innovation,
             creative storytelling, and flawless execution.
           </p>
         </div>
@@ -42,20 +43,20 @@ const About = () => {
             <h2 className="section-title">Our Story</h2>
             <div className="story-text">
               <p className="lead-text">
-                At EventEngineer360, we transform visions into extraordinary realities. From electrifying 
-                live concerts and prestigious government events to dynamic corporate gatherings, vibrant 
-                college festivals, and innovative hybrid experiences—we orchestrate every detail with 
+                At EventEngineer360, we transform visions into extraordinary realities. From electrifying
+                live concerts and prestigious government events to dynamic corporate gatherings, vibrant
+                college festivals, and innovative hybrid experiences—we orchestrate every detail with
                 precision and passion.
               </p>
               <p>
-                Our collaborative approach ensures we understand your unique goals, audience, and vision. 
+                Our collaborative approach ensures we understand your unique goals, audience, and vision.
                 Every event becomes a masterpiece of meticulous planning fused with creative innovation—
-                featuring live entertainment, interactive experiences, artistic décor, professional audio-visual 
+                featuring live entertainment, interactive experiences, artistic décor, professional audio-visual
                 production, and memorable surprises.
               </p>
               <p>
-                Our mission is crystal clear: deliver premium, comprehensive solutions that energize audiences, 
-                engage participants, and create lasting impressions. Your event isn't just managed—it's 
+                Our mission is crystal clear: deliver premium, comprehensive solutions that energize audiences,
+                engage participants, and create lasting impressions. Your event isn't just managed—it's
                 engineered to perfection.
               </p>
             </div>
@@ -94,13 +95,13 @@ const About = () => {
                 <h3>Meet Ankit</h3>
                 <p className="founder-title">Visionary Leader</p>
                 <blockquote className="founder-quote">
-                  "My vision is to transform every event into an extraordinary experience. 
-                  At EventEngineer360, we don't just organize events—we engineer memories 
+                  "My vision is to transform every event into an extraordinary experience.
+                  At EventEngineer360, we don't just organize events—we engineer memories
                   that resonate for a lifetime."
                 </blockquote>
                 <p className="founder-bio">
-                  With extensive experience in event management, Ankit founded EventEngineer360 
-                  to bridge imagination and reality, driven by unwavering commitment to excellence 
+                  With extensive experience in event management, Ankit founded EventEngineer360
+                  to bridge imagination and reality, driven by unwavering commitment to excellence
                   and client satisfaction.
                 </p>
               </div>
@@ -109,17 +110,17 @@ const About = () => {
 
           <div className="gallery-section">
             <h3 className="gallery-title">Event Showcase</h3>
-            
+
             <div className="team-carousel">
               <div className="carousel-container">
                 <button className="carousel-btn prev-btn" onClick={prevTeamImage}>
                   <span>‹</span>
                 </button>
-                
+
                 <div className="carousel-main">
                   <div className="carousel-image-container">
-                    <img 
-                      src={teamImages[currentTeamIndex].src} 
+                    <img
+                      src={teamImages[currentTeamIndex].src}
                       alt={teamImages[currentTeamIndex].alt}
                       className="carousel-image"
                     />
@@ -128,12 +129,12 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <button className="carousel-btn next-btn" onClick={nextTeamImage}>
                   <span>›</span>
                 </button>
               </div>
-              
+
               <div className="carousel-indicators">
                 {teamImages.map((_, index) => (
                   <button
@@ -143,7 +144,7 @@ const About = () => {
                   />
                 ))}
               </div>
-              
+
               <div className="carousel-counter">
                 {currentTeamIndex + 1} / {teamImages.length}
               </div>
@@ -179,35 +180,35 @@ const About = () => {
         </div>
 
         <div className="partners-section">
-          <h2 className="section-title centered">Trusted Partners</h2>
+          <h2 className="section-title centered">Our Clients</h2>
           <div className="partners-grid">
             <div className="partner-card">
               <div className="partner-logo">
-                <img src="/Logo.jpg" alt="EventEngineer360" />
+                <img src="/Bihar_Tourism_Official_Logo.jpg" alt="Bihar Tourism" style={{ maxHeight: '80px', objectFit: 'contain' }} />
               </div>
-              <h4>EventEngineer360</h4>
-              <p>Leading Event Management</p>
+              <h4>Bihar Tourism</h4>
+              <p>Government of Bihar</p>
             </div>
             <div className="partner-card">
-              <div className="partner-logo premium-venues">
-                <span>VENUE</span>
+              <div className="partner-logo">
+                <img src="/LG-Logo.png" alt="LG Electronics" style={{ maxHeight: '80px', objectFit: 'contain' }} />
               </div>
-              <h4>Premium Venues</h4>
-              <p>Exclusive Location Partners</p>
+              <h4>LG Electronics</h4>
+              <p>Global Technology Partner</p>
             </div>
             <div className="partner-card">
-              <div className="partner-logo tech-solutions">
-                <span>TECH</span>
+              <div className="partner-logo">
+                <img src="/1200px-ITC_Limited_Logo.svg.png" alt="ITC Limited" style={{ maxHeight: '80px', objectFit: 'contain' }} />
               </div>
-              <h4>Tech Solutions</h4>
-              <p>Audio Visual Partners</p>
+              <h4>ITC Limited</h4>
+              <p>Diversified Business Conglomerate</p>
             </div>
             <div className="partner-card">
-              <div className="partner-logo catering-services">
-                <span>CATERING</span>
+              <div className="partner-logo">
+                <img src="/1280px-NTPC_Logo.svg.png" alt="NTPC Limited" style={{ maxHeight: '80px', objectFit: 'contain' }} />
               </div>
-              <h4>Catering Services</h4>
-              <p>Premium Food Partners</p>
+              <h4>NTPC Limited</h4>
+              <p>Maharatna Power Company</p>
             </div>
           </div>
         </div>
