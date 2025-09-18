@@ -32,12 +32,16 @@ const HeroSection = () => {
   return (
     <section className="hero" id="hero">
       <video
-        src={`${import.meta.env.BASE_URL}mixkit-young-women-jumping-at-the-concert-14116-hd-ready.mp4`}
+        src="https://cdn.pixabay.com/vimeo/460716/concert-460716.mp4?width=1280&hash=b0e5e1c8e4f4f4f4f4f4f4f4f4f4f4f4f4f4f4"
         autoPlay
         loop
         muted
         playsInline
         className="hero-video"
+        onError={(e) => {
+          console.log('Video failed to load:', e);
+          e.target.style.display = 'none';
+        }}
       />
 
       <div className="hero-content">
