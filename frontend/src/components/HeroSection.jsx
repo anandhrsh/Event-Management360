@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
-  
+
   const heroTexts = [
     {
       subtitle: "Dream Maker",
@@ -32,7 +32,7 @@ const HeroSection = () => {
   return (
     <section className="hero" id="hero">
       <video
-        src="/mixkit-young-women-jumping-at-the-concert-14116-hd-ready.mp4"
+        src={`${import.meta.env.BASE_URL}mixkit-young-women-jumping-at-the-concert-14116-hd-ready.mp4`}
         autoPlay
         loop
         muted
@@ -51,7 +51,7 @@ const HeroSection = () => {
           <p className="hero-description animate-fade-delay">
             {heroTexts[currentText].description}
           </p>
-          
+
           <div className="hero-cta-container">
             <RouterLink to="/contact" className="cta-primary">
               <span>Book Your Event</span>
@@ -62,7 +62,7 @@ const HeroSection = () => {
             </RouterLink>
           </div>
         </div>
-        
+
         <div className="hero-indicators">
           {heroTexts.map((_, index) => (
             <button
