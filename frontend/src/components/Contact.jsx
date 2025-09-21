@@ -7,7 +7,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  
+
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [charCounts, setCharCounts] = useState({
@@ -92,7 +92,7 @@ const Contact = () => {
     setErrors(newErrors);
 
     const hasErrors = Object.values(newErrors).some(error => error !== "");
-    
+
     if (hasErrors) {
       toast.error("Please fix all validation errors before submitting");
       setIsSubmitting(false);
@@ -101,12 +101,12 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/message/send",
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000'}/api/v1/message/send`,
         { name, email, subject, message },
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
       toast.success(res.data.message);
-      
+
       setName("");
       setEmail("");
       setSubject("");
@@ -126,22 +126,22 @@ const Contact = () => {
         <div className="contact-logo">
           <img src="/Logo.jpg" alt="Event Engineer 360 Logo" />
         </div>
-        
+
         <div className="contact-info-item address">
           <h4>📍 Address</h4>
           <p>First floor, Bihari Complex, 106, Mithapur, Patna, Bihar</p>
         </div>
-        
+
         <div className="contact-info-item phone">
           <h4>📞 Call Us</h4>
           <p>+91 93860 89306</p>
         </div>
-        
+
         <div className="contact-info-item email">
           <h4>✉️ Mail Us</h4>
           <p>teamevent360@gmail.com</p>
         </div>
-        
+
         <div className="contact-info-item map">
           <h4>🗺️ Find Us</h4>
           <div className="map-container">
@@ -161,7 +161,7 @@ const Contact = () => {
         <div className="contact-form-container">
           <h2>Send Us A Message</h2>
           <p>Get in touch with us for your event planning needs. We're here to help make your special occasions memorable and perfectly organized.</p>
-          
+
           <form onSubmit={handleSendMessage} className="contact-form">
             <div className="form-row">
               <div className="form-group">
@@ -216,8 +216,8 @@ const Contact = () => {
               <button type="button" className="btn btn-secondary">
                 Back to Home
               </button>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn btn-primary"
                 disabled={isSubmitting}
               >
